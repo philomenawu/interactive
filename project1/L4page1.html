@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Very Hungry Caterpillar</title>
+    <link rel="icon" type="image/png" href="/interactive/images/traffic.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color:black;
+            font-family: 'Pangolin';
+            text-align: center;
+        }
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container {
+            position: relative;
+            width: 300px;
+            height: 50%;
+            border: 5px solid black;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-right: 20px; 
+            margin: 20px auto;
+            justify-content: center;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        .container:nth-child(2) {
+            top: 50px;
+            left: 50px;
+        }
+        .container:nth-child(3) {
+            top: 100px;
+            left: 100px;
+        }
+        .container:nth-child(4) {
+            top: 150px;
+            left: 150px;
+        }
+        .container:nth-child(5) {
+            top: 200px;
+            left: 200px;
+        }
+        .container:nth-child(6) {
+            top: 250px;
+            left: 250px;
+        }
+        .container:nth-child(1):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container:nth-child(2):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container:nth-child(3):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container:nth-child(4):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container:nth-child(5):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container:nth-child(6):hover {
+            background-color: white; 
+            transition: background-color 0.5s; 
+        }
+        .container img {
+            left: 5%;
+            transform: translateX(-50%);
+            display: none;
+            z-index: 2;
+        }
+        .container:hover img {
+            display: block;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>The Very Hungry Caterpillar</h1>
+            <h3><i>by Eric Carle</i></h3>
+            <img src="caterpillar.png">
+        </div>
+        <div class="container">
+            <p>
+                In the light of the moon a little egg lay on a leaf.<br> 
+                One Sunday morning the warm sun came up and — <br><br>
+                <h2><em><b>POP!</b></em><br><br></h2>
+                — out of the egg came a tiny and <i>very</i>&nbsp; hungry caterpillar.<br> 
+                He started looking for some food.<br>
+            </p>
+            <img src="sun.png">
+        </div>
+        <div class="container">
+            <p>
+                On Monday he ate through one apple,<br> 
+                <i>but he was still hungry.</i><br><br>  
+                On Tuesday he ate through two pears,<br>
+                <i>but he was still hungry.</i><br><br>   
+                On Wednesday he ate through three plums,<br>
+                <i>but he was still hungry.</i><br><br>    
+                On Thursday he ate through four strawberries,<br>
+                <i>but he was still hungry.</i><br><br>    
+                On Friday he ate through five oranges,<br>
+                <i>but he was still hungry.</i><br><br>
+            </p>
+            <img src="apple.png">
+        </div>
+        <div class="container">
+            <p>
+                On Saturday he ate through<br>
+                <h6>one piece of chocolate cake,<br>
+                <h6>one ice-cream cone,<br></h6> 
+                <h5>one pickle,<br></h5>
+                <h5>one slice of Swiss cheese,<br></h5> 
+                <h4>one slice of&nbsp;salami,<br></h4>
+                <h4>one lollipop,<br></h4> 
+                <h3>one piece of cherry pie,<br></h3>
+                <h2>one sausage,<br></h2> 
+                <h2>one cupcake,<br></h2> 
+                <h1>and one slice of watermelon.<br></h1> 
+            </p>
+            <img src="watermelon.png">
+        </div>
+        <div class="container">
+            <p>
+                <br><br><br><br>That night he had a stomachache!<br><br><br><br><br>   
+                The next day was Sunday again.<br>  
+                The caterpillar ate through one nice leaf, and after that he felt much better.<br>   
+                Now he wasn't hungry anymore — and he wasn't a little caterpillar anymore.<br><br>   
+                He was a <h1>BIG, FAT</h1> caterpillar.<br><br>    
+            </p>
+            <img src="fat.png">
+        </div>
+        <div class="container">
+            <p>
+                He built a small house, called a <i>cocoon</i>, around himself.<br>   
+                He stayed inside for more than two weeks.<br>   
+                Then he nibbled a hole in the cocoon, pushed his way out and...<br><br><br>
+                <h1><b><i>He became a beautiful butterfly!</i></b></h1><br><br>
+            </p>
+            <img src="butterfly.png">
+        </div>
+    </div>    
+  </body>
