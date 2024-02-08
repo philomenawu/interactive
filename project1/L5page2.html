@@ -175,7 +175,7 @@
                 “Turtle,” said Toad, “carry me to the island. Frog is there. He wants to be alone.”<br><br>
                 “If Frog wants to be alone,” said the turtle, “why don't you leave him alone?”<br><br>
                 “Maybe you are right,” said Toad. “Maybe Frog does not want to see me.<br> 
-                Maybe he does not want me to be his friend anymore.”<br><br>
+                <span style="font-size: 50pt;">Maybe he does not want me to be his friend anymore.”</span><br><br>
                 “Yes, maybe,” said the turtle as he swam to the island.<br><br>
                 “Frog!” cried Toad. “I am sorry for all the dumb things I do.<br>
                 I am sorry for all the silly things I say. Please be my friend again!” Toad slipped off the turtle.<br>
@@ -190,7 +190,8 @@
                     “Our lunch is spoiled,” said Toad. “I made it for you, Frog, so that you would be happy.”<br><br>
                     “But Toad,” said Frog. “I am happy. I am very happy.<br><br>
                     This morning when I woke up I felt good because the sun was shining.<br>
-                    I felt good because I was a frog. <span style="font-size: 50pt;">And I felt good because I have you for a friend.</span><br><br><br>
+                    I felt good because I was a frog.<br><br>
+                    <span style="font-size: 50pt;">And I felt good because I have you for a friend.</span><br><br><br>
                     I wanted to be alone.<br><br><br>
                     I wanted to think about how fine everything is.”<br><br>
                     “Oh,” said Toad. “I guess that is a very good reason for wanting to be alone.”<br>
@@ -206,7 +207,6 @@
             </div>
         </div>
         <script>
-          // Select all containers
           const oddContainers = document.querySelectorAll('.container:nth-child(odd)');
           // Loop through each odd container
           oddContainers.forEach(container => {
@@ -217,20 +217,14 @@
               });
           });
           const evenContainers = document.querySelectorAll('.container:nth-child(even)');
-          // Loop through each odd container
           evenContainers.forEach(container => {
-              // Add mouseenter event listener to each container
               container.addEventListener('mouseenter', () => {
-                  // Change color permanently when mouse enters
                   container.style.color = '#99b34d';
               });
           });
           const centerContainers = document.querySelectorAll('.centercontainer');
-          // Loop through each odd container
           centerContainers.forEach(container => {
-              // Add mouseenter event listener to each container
               container.addEventListener('mouseenter', () => {
-                  // Change color permanently when mouse enters
                   container.style.color = '#a2a251';
               });
           });
