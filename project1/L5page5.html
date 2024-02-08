@@ -37,6 +37,12 @@
             color: white;
             position: fixed;
         }
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
     </style>
   </head>
   <body>
@@ -134,5 +140,20 @@
             </p>
         </div>
     </div>
+    <div class="custom-cursor"></div>
+    <script>
+      // Update custom cursor position and change background color
+      document.addEventListener('mousemove', function(event) {
+          const cursor = document.querySelector('.custom-cursor');
+          cursor.style.left = `${event.clientX}px`;
+          cursor.style.top = `${event.clientY}px`;
+
+          // Change background color to green based on mouse position
+          const x = event.clientX / window.innerWidth;
+          const y = event.clientY / window.innerHeight;
+          const color = `rgb(0, ${x * 255}, ${y * 255})`;
+          document.body.style.backgroundColor = color;
+      });
+  </script>
 </body>
 </html>
