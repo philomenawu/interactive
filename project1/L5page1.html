@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: white;
             color:black;
             font-family: 'Pangolin';
             text-align: center;
@@ -19,43 +18,31 @@
         .container-wrapper {
             display: flex;
             justify-content: space-between;
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            width: 20vw;
+            height: 30%;
+            align-items: center;
+            margin: 0 auto;
         }
         .container {
+            flex: 0 0 auto;
             position: relative;
             width: 300px;
-            height: 50%;
+            height: 30%;
             border: 5px dashed black;
             padding: 30px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin-right: 20px; 
-            margin: 20px auto;
+            margin-right: 10vw; 
+            margin-bottom: 20px;
             justify-content: center;
             box-sizing: border-box;
             z-index: 1;
         }
-        .container:nth-child(2) {
-            top: 50px;
-            left: 50px;
-        }
-        .container:nth-child(3) {
-            top: 100px;
-            left: 100px;
-        }
-        .container:nth-child(4) {
-            top: 150px;
-            left: 150px;
-        }
-        .container:nth-child(5) {
-            top: 200px;
-            left: 200px;
-        }
-        .container:nth-child(6) {
-            top: 250px;
-            left: 250px;
-        }
-        .container:nth-child(1):hover {
+        /* .container:nth-child(1):hover {
             background-color: white; 
             transition: background-color 0.5s; 
         }
@@ -78,7 +65,7 @@
         .container:nth-child(6):hover {
             background-color: white; 
             transition: background-color 0.5s; 
-        }
+        } */
         .container img {
             left: 5%;
             transform: translateX(-50%);
@@ -87,6 +74,24 @@
         }
         .container:hover img {
             display: block;
+        }
+        .marquee-container {
+            position: absolute;
+            display: flex;
+            top: 0;
+            bottom: 0;
+            left: 5%;
+            justify-content: center;
+            align-items: center;
+            z-index: -999;
+        }
+        .marquee {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee img {
+            margin-right: 10px;
         }
     </style>
   </head>
@@ -140,7 +145,7 @@
         </div>
         <div class="container">
             <p>
-                <br><br><br><br>That night he had a stomachache!<br><br><br><br><br>   
+                That night he had a stomachache!<br><br><br>  
                 The next day was Sunday again.<br>  
                 The caterpillar ate through one nice leaf, and after that he felt much better.<br>   
                 Now he wasn't hungry anymore — and he wasn't a little caterpillar anymore.<br><br>   
@@ -157,6 +162,35 @@
             </p>
             <img src="butterfly.png">
         </div>
-    </div>    
+    </div>
+    <div class="marquee-container">
+      <marquee class="marquee" behavior="slide" slideamount="1" direction="down">
+          <img src="apple.png" alt="Apple">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="3" direction="down">
+          <img src="strawberry.png" alt="Strawberry">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="3" direction="down">
+        <img src="blueberry.png" alt="Blueberry">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="3" direction="down">
+        <img src="pear.png" alt="Pear">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="3" direction="down">
+        <img src="orange.png" alt="Orange">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="1" direction="down">
+        <img src="apple.png" alt="Apple">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="1" direction="down">
+          <img src="strawberry.png" alt="Strawberry">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="3" direction="down">
+          <img src="orange.png" alt="Orange">
+      </marquee>
+      <marquee class="marquee" behavior="slide" slideamount="1" direction="down">
+          <img src="watermelon.png" alt="Watermelon">
+      </marquee>
+    </div>
   </body>
   </html>
