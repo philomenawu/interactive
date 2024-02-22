@@ -50,7 +50,19 @@
         font-family: 'Archivo Black';
         text-align: center;
         margin-top: 6%;
+        animation-name: color;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
       }
+
+      @keyframes color {
+            0%   {background-color: rgb(255, 182, 182);}
+            25%  {background-color: rgb(255, 253, 145);}
+            50%  {background-color: rgb(176, 255, 134);}
+            75% {background-color: rgb(255, 253, 145);}
+            100% {background-color: rgb(255, 182, 182);}
+        }
 
       p {
         font-size: 10pt;
