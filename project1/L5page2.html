@@ -34,17 +34,14 @@
             width: 80vw;
             justify-content: center;
             align-items: center;
-            /* margin-bottom: 40px;  */
             font-size: 18pt;
             color: rgb(252, 243, 232);
-            /* border: 2px solid black; */
         }
         .container:nth-child(odd) {
             text-align: left;
         }
         .container:nth-child(even) {
             text-align: right;
-            /* margin-left: 50%; */
         }
         .centercontainer-wrapper {
             width: auto;
@@ -63,24 +60,6 @@
           width: 20vw;
           height: 30vh;
         }
-        /* .container p {
-        overflow: hidden; 
-        white-space: nowrap; 
-        width: 0; 
-        }
-
-        .container:hover p {
-        animation: typewriter 5s steps(50) forwards; 
-        }
-
-        @keyframes typewriter {
-        from {
-            width: 0;
-        }
-        to {
-            width: 100%; 
-        }
-        } */
     </style>
   </head>
   <body>
@@ -207,11 +186,8 @@
         </div>
         <script>
           const oddContainers = document.querySelectorAll('.container:nth-child(odd)');
-          // Loop through each odd container
           oddContainers.forEach(container => {
-              // Add mouseenter event listener to each container
               container.addEventListener('mouseenter', () => {
-                  // Change color permanently when mouse enters
                   container.style.color = '#888833';
               });
           });
@@ -230,5 +206,3 @@
       </script>
   </body>
   </html>
-
-  <!-- making text into links, tapping on the container -->

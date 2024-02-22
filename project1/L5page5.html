@@ -142,13 +142,10 @@
     </div>
     <div class="custom-cursor"></div>
     <script>
-      // Update custom cursor position and change background color
       document.addEventListener('mousemove', function(event) {
           const cursor = document.querySelector('.custom-cursor');
           cursor.style.left = `${event.clientX}px`;
           cursor.style.top = `${event.clientY}px`;
-
-          // Change background color to green based on mouse position
           const x = event.clientX / window.innerWidth;
           const y = event.clientY / window.innerHeight;
           const color = `rgb(0, ${x * 255}, ${y * 255})`;
