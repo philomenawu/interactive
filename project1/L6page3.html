@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Kissing Hand</title>
+    <link rel="icon" type="image/png" href="/interactive/images/traffic.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pangolin&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond';
+            font-size: 18pt;
+            background-image: linear-gradient(to bottom, rgb(0, 0, 98), rgb(193, 193, 255));
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+        .container-wrapper {
+            width: 26vw;
+            height: 90vh;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+        }
+        .container {
+            flex: 0 0 auto;
+            position: relative;
+            width: 20vw;
+            height: 62%;
+            padding: 25px;
+            text-align: left;
+            background-color: rgb(255, 253, 243);
+            border: 5px double black;
+            margin-right: 10vw;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .center {
+            text-align: center;
+        }
+        .marqueecontainer {
+            position: absolute;
+            z-index: -999;
+        }
+        .marqueecontainertop {
+            display: flex;
+            height: 80vh;
+            width: 99vw;
+            align-items:center;
+            position: absolute;
+            z-index: 9999;
+        }
+        marquee {
+            font-family: 'Rethink Sans';
+            font-weight: bold;
+        }
+        @media screen and (max-width: 600px) {
+            .container-wrapper {
+                width: 85vw;
+            } 
+            .container {
+                width: 70vw;
+            }
+        }
+        @media screen and (min-width: 600px) and (max-width: 1000px){
+            .container-wrapper {
+                width: 58vw;
+            }
+            .container {
+                width: 55vw;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="marqueecontainertop">
+        <marquee behavior="scroll" direction="left" scrollamount="6" style="font-size:230pt; z-index: 9999; font-weight: 800;">I MISS YOU.</marquee>
+    </div>
+    <div class="marqueecontainer">
+        <marquee behavior="scroll" direction="right" scrollamount="12" style="font-size:100pt;">WHY DON'T YOU EVER CALL ME?</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="8" style="font-size:80pt;">HOW ARE YOUR CLASSES?</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="6" style="font-size:80pt;">DID YOU EAT YET?</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="10" style="font-size:100pt;">WHAT ARE YOU DOING?</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="12" style="font-size:80pt; font-weight: 800;">YOU USED TO BE SO SMALL.</marquee>
+    </div>
+    <div class="container-wrapper">
+        <div class="container">
+          <span style="text-align: center;">
+                <h1>The Kissing Hand</h1>
+                <h3><i>by Audrey Penn</i></h3>
+          </span>
+        </div>
+        <div class="container">
+            <span style="font-weight: bold; font-size: 45pt; display: inline;">C</span>hester Raccoon stood at the edge of the forest and cried.<br>
+            “I don't want to go to school” he told his mother. “I want to stay home with you.”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“I want to play with my friends.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And play with my toys.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And read my books.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And swing on my swing.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please may I stay home with you?”
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mrs. Raccoon took Chester by the hand and nuzzled him on the ear.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Sometimes we all have to do things we don't want to do,” she told him gently.
+            “Even if they seem strange and scary at first. But you will love school once you start.”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“You'll make new friends.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And play with new toys.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read new books.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;And swing on new swings.”
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Besides,” she added, “I know a wonderful secret that will make your nights at school seem as warm and cozy as your days at home.”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chester wiped away his tears and looked interested. “A secret? What kind of secret?”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“A very old secret,” said Mrs. Raccoon. “I learned it from my mother, and she learned it from hers. It's called the <em>Kissing Hand</em>.”
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“The Kissing Hand?” asked Chester. “What's that?”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“I'll show you.” Mrs. Raccoon took Chester's left hand and spread open his tiny fingers into a fan.
+            Leaning forward, she kissed Chester right in the middle of his palm.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chester felt his mother's kiss rush from his hand, up his arm, and into his heart. Even his silky, black mask tingled with a special warmth.
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mrs. Raccoon smiled. “Now,” she told Chester, “whenever you feel lonely and need a little loving from home, just press your hand to your cheek and think<br><br>
+            <div class="center">
+                <h2><i>“Mommy loves you. Mommy loves you.”</i></h2>
+                </div>
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“And that very kiss will jump to your face and fill you with toasty warm thoughts.”
+            She took Chester's hand and carefully wrapped his fingers around the kiss.
+            “Now, do be careful not to lose it,” she teased him.
+            “But, don't worry. When you open your hand and wash your food, I promise the kiss will stick.”<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chester loved his Kissing Hand. Now he knew his mother's love would go with him wherever he went. Even to school.
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;That night, Chester stood in front of his school and looked thoughtful.
+            Suddenly, he turned to his mother and grinned.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Give me your hand,” he told her.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chester took his mother's hand in his own and unfolded her large, familiar fingers into a fan.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next, he leaned forward and kissed the center of her hand.
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Now you have a Kissing Hand, too,” he told her.
+            And with a gentle<em>“Good-bye”</em> and <em>“I love you,”</em>
+            Chester turned and danced away.
+        </div>
+        <div class="container">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mrs. Raccoon watched Chester scamper across a tree limb and enter school.
+            And as the hoot owl rang in the school year, she pressed her left hand to her cheek and smiled.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The warmth of Chester's kiss filled her heart with special words.
+        </div>
+        <div class="container">
+            <div class="center">
+                <h2><i>“Chester loves you,” it sang.<br>
+                    “Chester loves you.”</i></h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+  

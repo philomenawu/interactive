@@ -8,12 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pangolin&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Single+Day&display=swap" rel="stylesheet">
     <style>
         body {
-            color:black;
-            font-family: 'Pangolin';
-            text-align: center;
-            font-size: 14pt;
+        color:black;
+        font-family: 'Pangolin';
+        text-align: center;
+        font-size: 14pt;
         }
         .container-wrapper {
             display: flex;
@@ -29,7 +32,7 @@
         .container {
             flex: 0 0 auto;
             position: relative;
-            width: 300px;
+            width: 20vw;
             height: 30%;
             border: 5px dashed black;
             padding: 30px;
@@ -42,30 +45,6 @@
             box-sizing: border-box;
             z-index: 1;
         }
-        /* .container:nth-child(1):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        }
-        .container:nth-child(2):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        }
-        .container:nth-child(3):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        }
-        .container:nth-child(4):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        }
-        .container:nth-child(5):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        }
-        .container:nth-child(6):hover {
-            background-color: white; 
-            transition: background-color 0.5s; 
-        } */
         .container img {
             left: 5%;
             transform: translateX(-50%);
@@ -75,29 +54,93 @@
         .container:hover img {
             display: block;
         }
-        .marquee-container {
+        .falling-container {
             position: absolute;
             display: flex;
             top: 0;
-            bottom: 20vh;
             left: 5%;
-            justify-content: top;
             align-items: center;
             z-index: -999;
-            height: 90%;
+            height: 100%;
         }
-        .marquee {
+        @keyframes falling {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+        .fruit {
             display: block;
             overflow: hidden;
             width: 100%;
-            height:100%;
+            height: 30%;
+            animation-name: falling;
         }
-        .marquee img {
+        .fruit:nth-child(even) {
+            animation: falling 3s;
+            animation-fill-mode: forwards;
+        }
+        .fruit:nth-child(odd) {
+            animation: falling 3.5s;
+            animation-fill-mode: forwards;
+        }
+        .fruit img {
             margin-right: 10px;
         }
+        .wordcontainer {
+            height: auto;
+            width: 30vw;
+            display: flex;
+        }
+        .word {
+            font-family: 'Rethink Sans';
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 325pt;
+            z-index: 99999; 
+            font-weight: 750;;
+            padding: 0;
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 60vw;
+            }
+            .word {
+                top: 25%;
+                left: 50%;
+                font-size: 170pt;
+                font-weight: 900;
+                line-height: 0;
+                height: 0;
+            }
+            .container-wrapper {
+                width: 60vw;
+            }
+        }
+        @media screen and (min-width: 600px) and (max-width: 1000px) {
+            .container {
+                width: 33vw;
+            }
+            .word {
+                top: 15%;
+                left: 50%;
+                font-size: 250pt;
+                font-weight: 900;
+            }
+            .container-wrapper {
+                width: 40vw;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <div class="wordcontainer">
+        <h2 class="word">F*CK</h2>
+    </div>
     <div class="container-wrapper">
         <div class="container">
             <h1>The Very Hungry Caterpillar</h1>
@@ -165,34 +208,16 @@
             <img src="butterfly.png">
         </div>
     </div>
-    <div class="marquee-container">
-      <marquee class="marquee" behavior="slide" slideamount="10" direction="down">
-          <img src="apple.png" alt="Apple">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="30" direction="down">
-          <img src="strawberry.png" alt="Strawberry">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="10" direction="down">
-        <img src="blueberry.png" alt="Blueberry">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="30" direction="down">
-        <img src="pear.png" alt="Pear">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="10" direction="down">
-        <img src="orange.png" alt="Orange">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="30" direction="down">
-        <img src="apple.png" alt="Apple">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="10" direction="down">
-          <img src="strawberry.png" alt="Strawberry">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="30" direction="down">
-          <img src="orange.png" alt="Orange">
-      </marquee>
-      <marquee class="marquee" behavior="slide" slideamount="10" direction="down">
-          <img src="watermelon.png" alt="Watermelon">
-      </marquee>
+    <div class="falling-container">
+        <div class="fruit"><img src="apple3_1.png" alt="Apple"></div>
+        <div class="fruit"><img src="strawberry.png" alt="Strawberry"></div>
+        <div class="fruit"><img src="blueberry.png" alt="Blueberry"></div>
+        <div class="fruit"><img src="pear.png" alt="Pear"></div>
+        <div class="fruit"><img src="orange.png" alt="Orange"></div>
+        <div class="fruit"><img src="apple.png" alt="Apple"></div>
+        <div class="fruit"><img src="strawberry.png" alt="Strawberry"></div>
+        <div class="fruit"><img src="orange.png" alt="Orange"></div>
+        <div class="fruit"><img src="watermelon.png" alt="Watermelon"></div>
     </div>
   </body>
   </html>
