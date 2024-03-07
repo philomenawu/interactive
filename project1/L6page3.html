@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Kissing Hand</title>
+    <title>the kissing hand</title>
     <link rel="icon" type="image/png" href="/interactive/images/traffic.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,8 @@
         body {
             font-family: 'Cormorant Garamond';
             font-size: 18pt;
-            background-image: linear-gradient(to bottom, rgb(0, 0, 98), rgb(193, 193, 255));
+            background-color: white;
+            /* background-image: linear-gradient(to bottom, rgb(0, 0, 98), rgb(193, 193, 255)); */
             background-repeat: no-repeat;
             background-size: 100% 100vh;
         }
@@ -81,9 +82,22 @@
                 width: 55vw;
             }
         }
+        .home {
+            position: absolute;
+            top: 85vh;
+            left: 90vw;
+            z-index: 99999;
+        }
+        .home:hover {
+            filter: brightness(70%);
+            transform: rotate(-5deg);
+        }
     </style>
   </head>
   <body>
+    <a href="bookshelf.html">
+        <img class="home" src="greenteddy.png">
+    </a>
     <div class="marqueecontainertop">
         <marquee behavior="scroll" direction="left" scrollamount="6" style="font-size:230pt; z-index: 9999; font-weight: 800;">I MISS YOU.</marquee>
     </div>

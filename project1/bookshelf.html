@@ -3,21 +3,333 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bookshelf</title>
+    <title>stay awhile</title>
     <link rel="icon" type="image/png" href="/interactive/images/traffic.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pangolin&family=Single+Day&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Pangolin&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Single+Day&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: white;
+            background-color: rgb(255, 255, 255);
+        }
+        .center {
+            position: relative;
+            display: flex;
+            height: 90vh;
+        }
+        .switch {
+            height: 13vh;
+            width: 5vw;
+            /* z-index: 999; */
+            /* border: 2px solid black; */
+        }
+        .switchbutton {
+            height: 13vh;
+            width: 5vw;
+            position: absolute; 
+            top: 35vh; 
+            left: 8vw;
+            background-color: transparent;
+            border: 5px dashed black;
+        }
+
+        .shelfwrapper {
+            position: relative;
+            width: 30vw;
+            height: 80vh;
+            margin-top: 10vh;
+            margin-left: 20vw;
+        }
+        .shelf {
+            position: absolute;
+            width: 30vw;
+            height: 80vh;
+            /* margin-top: 10vh;
+            margin-left: 20vw; */
+            /* border: 2px solid black; */
+        }
+        #lamp {
+            width: 38%;
+            height: 13%;
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 12.5%;
+            top: 4%;
+            z-index: 99999;
+        }
+        #story1 {
+            width: 7%;
+            height: 11%;
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 20%;
+            top: 26%;
+            z-index: 99999;
+        }
+        #story2 {
+            width: 23%;
+            height: 4%;
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 51%;
+            top: 51%;
+            z-index: 99999;
+        }
+        #story3 {
+            width: 8%;
+            height: 11%;
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 10%;
+            top: 61%;
+            z-index: 99999;
+        }
+        #story4 {
+            width: 5%;
+            height: 11%;
+            transform: rotate(20deg);
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 70%;
+            top: 61%;
+            z-index: 99999;
+        }
+        #story5 {
+            width: 5%;
+            height: 11%;
+            /* border: 3px solid black; */
+            display: block;
+            position: absolute;
+            left: 85%;
+            top: 80%;
+            z-index: 99999;
+        }
+
+        .window {
+            position: absolute;
+            width: 20vw;
+            height: 40vh;
+            /* left: 75vw; */
+            /* margin-top: 5vh;
+            margin-left: 75vw; */
+            /* z-index: 999; */
+            /* border: 2px solid black; */
+        }
+        .windowbutton {
+            position: absolute;
+            width: 20vw;
+            height: 40vh;
+            margin-top: 5vh;
+            border: 5px dashed black;
+            left: 75vw;
+        }
+        .poster {
+            position: absolute;
+            width: 15vw;
+            height: 30vh;
+            /* margin-top: 5vh; */
+            /* z-index: -999; */
+            /* border: 2px solid black; */
+        }
+        .posterbutton {
+            position: relative;
+            display: inline-block;
+            width: 15vw;
+            height: 30vh;
+            margin-top: 5vh;
+            margin-left: 1vw;
+            border: 5px dashed black;
+        }
+        .desk {
+            position: relative;
+            /* border: 2px solid black; */
+        }
+        .deskbutton {
+            position: absolute;
+            margin-top: 35vh;
+            margin-left: 50vw;
+            display: inline-block;
+            /* border: 2px solid pink; */
+        }
+        .dog {
+            position: absolute;
+            /* margin-top: 80vh;
+            margin-left: 10vw; */
+            height: 12vh;
+            width: 8vw;
+            /* border: 2px solid black; */
+            /* z-index: 100; */
+        }
+        .dogbutton {
+            display: inline-block;
+            position: absolute;
+            margin-top: 80vh;
+            margin-left: 10vw;
+            height: 12vh;
+            width: 8vw;
+            /* border: 2px solid pink; */
+            /* z-index: -100; */
+        }
+        .mirror {
+            position: relative;
+            width: 15vw;
+            height: 30vh;
+            left: 2vw;
+            /* border: 2px solid black; */
+        }
+        .mirrorbutton {
+            display: inline-block;
+            position: absolute;
+            padding-right: 5vw;
+            width: 15vw;
+            height: 30vh;
+            left: 2vw;
+            /* border: 2px solid pink; */
+        }
+        a:not(#lamp):not(#story1):not(#story2):not(#story3):not(#story4):not(#story5):hover {
+            filter: brightness(80%);
+            transform: rotate(5deg);
+        }
+        a {
+            all: unset;
+            /* border: 2px solid pink; */
+        }
+        #lamp:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: rgb(153, 153, 153); 
+        }
+        #story1:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: rgb(115, 160, 115);
+        }
+        #story2:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: rgb(182, 68, 182);  
+        }
+        #story3:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: yellow; 
+        }
+        #story4:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: rgb(48, 85, 48); 
+        }
+        #story5:hover {
+            filter: brightness(100%);
+            opacity: 50%;
+            background-color: orange;
+        }
+        .title {
+            color: rgb(0, 0, 0);
+            font-size: 100pt;
+            font-family: 'Rethink Sans';
+            font-weight: 900;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            margin: 0; 
+            padding: 0; 
+            line-height: 1; 
+        }
+        marquee {
+            margin-top: 5vh;
+            margin-left: 1vw;
+            z-index: 99999;
+            width: 90%;
+            height: 80%;
+            position: center center;
         }
     </style>
     </head>
     <body>
-
+        <div class="title">
+            <p>PUBERTY</p>
+        </div>
+        <div class="center">
+            <div>
+                <a class="mirrorbutton" href="mirror.html">
+                    <img class="mirror" src="mirror2.png">
+                </a>
+                <a class="switchbutton" href="index.html">
+                    <img class="switch" src="switch2.png">
+                </a>
+                <a class="dogbutton" onclick="openWindow()">
+                    <img class="dog" src="dog.png">
+                </a>
+            </div>
+            <div class="shelfwrapper">
+                <div class="linkwrapper">
+                    <a id="lamp" href="fish.html"></a>
+                    <a id="story1" href="L6page1.html"></a>
+                    <a id="story2" href="L6page3.html"></a>
+                    <a id="story3" href="L6page4.html"></a>
+                    <a id="story4" href="L6page2.html"></a>
+                    <a id="story5" href=""></a>
+                </div>
+                <img class="shelf" src="shelf2.png">
+            </div>
+            <!-- <div> -->
+                <a class="posterbutton" href="poster.html">
+                    <img class="poster" src="puberty.png">
+                </a>
+                <a class="deskbutton" href="desk.html">
+                    <img class="desk" src="desk.png">
+                </a>
+            <!-- </div> -->
+            <div>
+                <a class="windowbutton" href="window.html">
+                    <img class="window" src="window.png">
+                    <marquee scrollamount="1">
+                        <pre style="font-size: 8px; line-height: 8px; opacity: 70%;">
+                                            ██████                
+                                            ██      ██              
+                                        ██          ████          
+                                        ██              ▒▒██        
+                                    ████▒▒                ██        
+                            ██████      ▒▒            ▒▒▒▒████    
+                            ██▒▒            ▒▒        ▒▒      ▒▒██  
+                            ██▒▒▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒          ▒▒██
+                            ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+                                ████████▓▓████████████████████████  
+                        </pre>
+                        <br>
+                        <pre style="font-size: 8px; line-height: 8px; opacity: 50%;">
+                                                        ███              
+                                                    ██    ██          
+                                                    ██        ████      
+                                                    ██            ██    
+                                                ████            ██    
+                                                ██                ██    
+                                                ████████▓▓██████████    
+                      </pre>
+                    </marquee>
+                </a>
+            </div>
+        </div>
+        <script>
+            function openWindow() {
+                var url = "dog.html";
+                var windowName = "myWindow";
+                var windowFeatures = "width=300,height=200";
+                window.open(url, windowName, windowFeatures);
+            }
+            
+        </script>
     </body>
     </html>
