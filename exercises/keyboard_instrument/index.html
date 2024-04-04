@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letters From The Garden of Eden</title>
+<style>
+  /* Style for the colored square */
+  .colored-square {
+    position: absolute;
+    opacity: 0.8;
+  }
+
+  /* Individual color styles */
+  .a {
+    z-index: -99999;
+  }
+
+  .b {
+
+    z-index: -99999;
+  }
+
+  .c {
+    z-index: -99999;
+  }
+
+  .d {
+    z-index: -99999;
+  }
+
+  .e {
+    z-index: -99999;
+  }
+
+  .f {
+    z-index: -99999;
+  }
+
+  .g {
+    z-index: -99999;
+  }
+
+  .h {
+    z-index: -99999;
+  }
+
+  .i {
+    z-index: -99999;
+  }
+
+  .j {
+    z-index: -99999;
+  }
+
+  .k {
+    z-index: -99999;
+  }
+
+  .l {
+    z-index: -99999;
+  }
+
+  .m {
+    z-index: -99999;
+  }
+
+  .n {
+    z-index: -99999;
+  }
+
+  .o {
+    z-index: -99999;
+  }
+
+  .p {
+    z-index: -99999;
+  }
+
+  .q {
+    z-index: -99999;
+  }
+
+  .r {
+    z-index: -99999;
+  }
+
+  .s {
+    z-index: -99999;
+  }
+
+  .t {
+    z-index: -99999;
+  }
+
+  .u {
+    z-index: -99999;
+  }
+
+  .v {
+    z-index: -99999;
+  }
+
+  .w {
+    z-index: -99999;
+  }
+
+  .x {
+    z-index: -99999;
+  }
+
+  .y {
+    z-index: -99999;
+  }
+
+  .z {
+    z-index: -99999;
+  }
+
+  .other {
+    background-color: rgb(126, 255, 141);
+    width: 50px;
+    height: 50px;
+    z-index: -99999;
+  }
+
+  .square-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8em;
+    color: black;
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  h1 {
+    line-height: 1em;
+    text-align: center;
+    font-size: 1em;
+    z-index: 99999;
+  }
+
+  p {
+    margin-top: 50vh;
+    text-align: center;
+    font-style: italic;
+  }
+  .colored-squares-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 50vh;
+    z-index: 99999;
+  }
+
+</style>
+
+</head>
+<body>
+  <p>letters from the garden of eden</p>
+  <h1>write a message in the language of flowers</h1>
+  <div class="container">
+  <div id="colored-squares-container"></div>
+  </div>
+<script>
+  document.body.onkeydown = function(keypress_event) {
+    var key = keypress_event.key;
+    var coloredSquare;
+    var prevSquarePosition = { top: 0, left: 0 };
+
+    coloredSquare = document.createElement("div");
+    coloredSquare.classList.add("colored-square");
+
+    switch(key.toLowerCase()) {
+      case "a":
+        coloredSquare.classList.add("a");
+        var squareText = "🌸";
+        break;
+      case "b":
+        coloredSquare.classList.add("b");
+        var squareText = "🌿";
+        break;
+      case "c":
+        coloredSquare.classList.add("c");
+        var squareText = "🏵️";
+        break;
+      case "d":
+        coloredSquare.classList.add("d");
+        var squareText = "🍃";
+        break;
+      case "e":
+        coloredSquare.classList.add("e");
+        var squareText = "🌼";
+        break;
+      case "f":
+        coloredSquare.classList.add("f");
+        var squareText = "🌾";
+        break;
+      case "g":
+        coloredSquare.classList.add("g");
+        var squareText = "🌺";
+        break;
+      case "h":
+        coloredSquare.classList.add("h");
+        var squareText = "🍀";
+        break;
+      case "i":
+        coloredSquare.classList.add("i");
+        var squareText = "🌹";
+        break;
+      case "j":
+        coloredSquare.classList.add("j");
+        var squareText = "☘️";
+        break;
+      case "k":
+        coloredSquare.classList.add("k");
+        var squareText = "🎕";
+        break;
+      case "l":
+        coloredSquare.classList.add("l");
+        var squareText = "💐";
+        break;
+      case "m":
+        coloredSquare.classList.add("m");
+        var squareText = "🌷";
+        break;
+      case "n":
+        coloredSquare.classList.add("n");
+        var squareText = "❀";
+        break;
+      case "o":
+        coloredSquare.classList.add("o");
+        var squareText = "🥀";
+        break;
+      case "p":
+        coloredSquare.classList.add("p");
+        var squareText = "✾";
+        break;
+      case "q":
+        coloredSquare.classList.add("q");
+        var squareText = "🌻";
+        break;
+      case "r":
+        coloredSquare.classList.add("r");
+        var squareText = "✿";
+        break;
+      case "s":
+        coloredSquare.classList.add("s");
+        var squareText = "🪻";
+        break;
+      case "t":
+        coloredSquare.classList.add("t");
+        var squareText = "❁";
+        break;
+      case "u":
+        coloredSquare.classList.add("u");
+        var squareText = "🌵";
+        break;
+      case "v":
+        coloredSquare.classList.add("v");
+        var squareText = "✽";
+        break;
+      case "w":
+        coloredSquare.classList.add("w");
+        var squareText = "🪷";
+        break;
+      case "x":
+        coloredSquare.classList.add("x");
+        var squareText = "❋";
+        break;
+      case "y":
+        coloredSquare.classList.add("y");
+        var squareText = "🌱";
+        break;
+      case "z":
+        coloredSquare.classList.add("z");
+        var squareText = "ꕥ";
+        break;
+      default:
+        // coloredSquare.classList.add("other");
+        var squareText = "🐝";
+
+    }
+    var randomTop = Math.random() * (window.innerHeight - coloredSquare.clientHeight);
+    var randomLeft = Math.random() * (window.innerWidth - coloredSquare.clientWidth);
+
+    coloredSquare.style.top = randomTop + "px";
+    coloredSquare.style.left = randomLeft + "px";
+    var textElement = document.createElement("div");
+    textElement.classList.add("square-text");
+    textElement.textContent = squareText;
+    coloredSquare.appendChild(textElement);
+
+    document.getElementById("colored-squares-container").appendChild(coloredSquare);
+  };
+</script>
+</body>
+</html>
