@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>album</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Micro+5&family=Pangolin&family=Reenie+Beanie&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Silkscreen:wght@400;700&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        @media only screen and (orientation: landscape) {
+            body {
+                background-color: black;
+                background-repeat: no-repeat;
+                background-size: 80%;
+                background-attachment: fixed;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .flip {
+                display: none;
+            }
+            .iconcontainer {
+                display: none;
+            }
+            .icon {
+                display: none;
+            }
+            .imgcontainer {
+                display: block;
+                width: 100vw;
+                height: 90vh;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            #img1 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img3 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img5 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(30deg);
+            }
+            #img7 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img9 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(30deg);
+            }
+            #img11 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img13 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(30deg);
+            }
+            #img15 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(-30deg);
+            }
+            #img2 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img4 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(-10deg);
+            }
+            #img6 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(10deg);
+            }
+            #img8 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img10 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(10deg);
+            }
+            #img12 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+                transform: rotate(-10deg);
+            }
+            #img14 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+            #img16 {
+                width: auto;
+                height: 50%;
+                position: absolute;
+            }
+        }
+        @media only screen and (orientation: portrait) {
+            .video {
+                display: none;
+            }
+            body {
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+            .flip {
+                text-align: center;
+                color: white;
+                font-size: 18pt;
+                font-family: "Reenie Beanie", cursive;
+            }
+            .icon {
+                width: 40%;
+                height: 40%;
+            }
+            .iconcontainer {
+                display: block;
+                text-align: center;
+            }
+            .imgcontainer {
+                display: none;
+            }
+            #img1, #img2, #img3, #img4, #img5, #img6, #img7,
+            #img8, #img9, #img10, #img11, #img12, #img13,
+            #img14, #img15, #img16 {
+                display: none;
+            }
+        }
+    </style>
+    <body>
+        <!-- <div class="imgcontainer"> -->
+            <img id="img1" src="band/pic1.JPG" draggable="true">
+            <img id="img2" src="band/pic2.JPG" draggable="true">
+            <img id="img3" src="band/pic3.JPG" draggable="true">
+            <img id="img4" src="band/pic4.JPG" draggable="true">
+            <img id="img5" src="band/pic5.JPG" draggable="true">
+            <img id="img6" src="band/pic6.JPG" draggable="true">
+            <img id="img7" src="band/pic7.JPG" draggable="true">
+            <img id="img8" src="band/pic8.JPG" draggable="true">
+            <img id="img9" src="band/pic9.JPG" draggable="true">
+            <img id="img10" src="band/pic10.JPG" draggable="true">
+            <img id="img11" src="band/pic11.JPG" draggable="true">
+            <img id="img12" src="band/pic12.JPG" draggable="true">
+            <img id="img13" src="band/pic13.JPG" draggable="true">
+            <img id="img14" src="band/pic14.JPG" draggable="true">
+            <img id="img15" src="band/pic15.JPG" draggable="true">
+            <img id="img16" src="band/pic16.JPG" draggable="true">
+        <!-- </div> -->
+        <div class="container">
+        <h2 class="flip">rotate phone to proceed</h2>
+        <div class="iconcontainer">
+            <img class="icon" src="band/rotateicon.png">
+        </div>
+        </div>
+    </body>
+      <script>
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            var zIndexCounter = 1;
+
+            elmnt.addEventListener('touchstart', touchstart);
+            elmnt.addEventListener('mousedown', mousedown);
+
+            function touchstart(e) {
+                e.preventDefault();
+                pos3 = e.touches[0].clientX;
+                pos4 = e.touches[0].clientY;
+                updateZIndex();
+                elmnt.style.zIndex = zIndexCounter++;
+                document.addEventListener('touchmove', touchmove);
+                document.addEventListener('touchend', touchend);
+            }
+
+            function mousedown(e) {
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                updateZIndex();
+                elmnt.style.zIndex = zIndexCounter++;
+                document.addEventListener('mousemove', mousemove);
+                document.addEventListener('mouseup', mouseup);
+            }
+
+            function touchmove(e) {
+                var touch = e.touches[0];
+                var newX = pos3 - touch.clientX;
+                var newY = pos4 - touch.clientY;
+                pos3 = touch.clientX;
+                pos4 = touch.clientY;
+                elmnt.style.top = (elmnt.offsetTop - newY) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+            }
+
+            function mousemove(e) {
+                e.preventDefault();
+                var newX = pos3 - e.clientX;
+                var newY = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                elmnt.style.top = (elmnt.offsetTop - newY) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+            }
+
+            function touchend() {
+                document.removeEventListener('touchmove', touchmove);
+                document.removeEventListener('touchend', touchend);
+            }
+
+            function mouseup() {
+                document.removeEventListener('mousemove', mousemove);
+                document.removeEventListener('mouseup', mouseup);
+            }
+
+            function updateZIndex() {
+                document.querySelectorAll('img').forEach(function(img) {
+                    img.style.zIndex = 1; // Reset z-index for all images
+                });
+            }
+        }
+        // Call the dragElement function with the draggable elements
+        var images = document.querySelectorAll('img');
+        images.forEach(function(img) {
+            dragElement(img);
+        });
+    </script>
