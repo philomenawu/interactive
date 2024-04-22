@@ -66,7 +66,7 @@
     </style>
     <body>
         <div class="container">
-        <img class="casette" src="band/casettebag.PNG">
+        <img class="casette" id="casetteImage" src="band/casettebag.PNG">
         <h2 class="flip">rotate phone to proceed</h2>
         <div class="iconcontainer">
             <img class="icon" src="band/rotateicon.png">
@@ -74,7 +74,20 @@
         </div>
 
         <script>
-                        console.log("JS RUNNING");
+
+// Get the image element
+        console.log("JS RUNNING");
+        var casetteImage = document.getElementById('casetteImage');
+
+        // Add event listener for click
+        casetteImage.addEventListener('click', function() {
+          // Change the image source
+          if (casetteImage.src.endsWith('casettebag.PNG')) {
+            casetteImage.src = 'band/casette5.png'; // Replace 'new_image.jpg' with the path to the new image
+          } else {
+            casetteImage.src = 'band/casettebag.PNG'; // Replace 'band/casettebag.PNG' with the original image path
+          }
+        });
       
       document.addEventListener("touchstart", handleTouchStart, false);
       document.addEventListener("touchmove", handleTouchMove, false);
@@ -114,7 +127,7 @@
         } else {
           if (yDiff > 10) {
             /* up swipe */
-            window.location.href = "pics.html";
+            window.location.href = "pics2.html";
           } else if (yDiff < -10) {
           window.location.href = "cd.html";
         }
