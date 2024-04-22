@@ -197,74 +197,129 @@
         </div>
 
       <script>
- function dragElement(elmnt) {
-        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        var zIndexCounter = 1;
+        function dragElement(elmnt) {
+    var pos3 = 0, pos4 = 0;
 
-        elmnt.addEventListener('touchstart', touchstart);
-        elmnt.addEventListener('mousedown', mousedown);
+    elmnt.addEventListener('touchstart', touchstart);
+    elmnt.addEventListener('mousedown', mousedown);
 
-        function touchstart(e) {
-            e.preventDefault();
+    function touchstart(e) {
+        e.preventDefault();
         pos3 = e.touches[0].clientX;
-            pos4 = e.touches[0].clientY;
-            updateZIndex();
-            elmnt.style.zIndex = zIndexCounter++;
-            document.addEventListener('touchmove', touchmove);
-            document.addEventListener('touchend', touchend);
-        }
+        pos4 = e.touches[0].clientY;
+        elmnt.style.zIndex = zIndexCounter++;
+        document.addEventListener('touchmove', touchmove);
+        document.addEventListener('touchend', touchend);
+    }
 
-        function mousedown(e) {
-            e.preventDefault();
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            updateZIndex();
-            elmnt.style.zIndex = zIndexCounter++;
-            document.addEventListener('mousemove', mousemove);
-            document.addEventListener('mouseup', mouseup);
-        }
+    function mousedown(e) {
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.zIndex = zIndexCounter++;
+        document.addEventListener('mousemove', mousemove);
+        document.addEventListener('mouseup', mouseup);
+    }
 
-        function touchmove(e) {
-            var touch = e.touches[0];
-            var newX = pos3 - touch.clientX;
-            var newY = pos4 - touch.clientY;
-            pos3 = touch.clientX;
-            pos4 = touch.clientY;
-            elmnt.style.top = (elmnt.offsetTop - newY) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
-        }
+    function touchmove(e) {
+        var touch = e.touches[0];
+        var newX = pos3 - touch.clientX;
+        pos3 = touch.clientX;
+        elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+    }
 
-        function mousemove(e) {
-            e.preventDefault();
-            var newX = pos3 - e.clientX;
-            var newY = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            elmnt.style.top = (elmnt.offsetTop - newY) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
-        }
+    function mousemove(e) {
+        e.preventDefault();
+        var newX = pos3 - e.clientX;
+        pos3 = e.clientX;
+        elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+    }
 
-        function touchend() {
-            document.removeEventListener('touchmove', touchmove);
-            document.removeEventListener('touchend', touchend);
-        }
+    function touchend() {
+        document.removeEventListener('touchmove', touchmove);
+        document.removeEventListener('touchend', touchend);
+    }
 
-        function mouseup() {
-            document.removeEventListener('mousemove', mousemove);
-            document.removeEventListener('mouseup', mouseup);
-        }
+    function mouseup() {
+        document.removeEventListener('mousemove', mousemove);
+        document.removeEventListener('mouseup', mouseup);
+    }
+}
 
-        function updateZIndex() {
-            document.querySelectorAll('img').forEach(function(img) {
-                img.style.zIndex = 1; // Reset z-index for all images
-            });
-        }
-            }
-            // Call the dragElement function with the draggable elements
-            var images = document.querySelectorAll('img');
-            images.forEach(function(img) {
-                dragElement(img);
-            });
+// Call the dragElement function with the draggable elements
+var images = document.querySelectorAll('img');
+var zIndexCounter = 1; // Initialize zIndexCounter
+images.forEach(function(img) {
+    dragElement(img);
+});
+//  function dragElement(elmnt) {
+//         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//         var zIndexCounter = 1;
+
+//         elmnt.addEventListener('touchstart', touchstart);
+//         elmnt.addEventListener('mousedown', mousedown);
+
+//         function touchstart(e) {
+//             e.preventDefault();
+//         pos3 = e.touches[0].clientX;
+//             pos4 = e.touches[0].clientY;
+//             updateZIndex();
+//             elmnt.style.zIndex = zIndexCounter++;
+//             document.addEventListener('touchmove', touchmove);
+//             document.addEventListener('touchend', touchend);
+//         }
+
+//         function mousedown(e) {
+//             e.preventDefault();
+//             pos3 = e.clientX;
+//             pos4 = e.clientY;
+//             updateZIndex();
+//             elmnt.style.zIndex = zIndexCounter++;
+//             document.addEventListener('mousemove', mousemove);
+//             document.addEventListener('mouseup', mouseup);
+//         }
+
+//         function touchmove(e) {
+//             var touch = e.touches[0];
+//             var newX = pos3 - touch.clientX;
+//             var newY = pos4 - touch.clientY;
+//             pos3 = touch.clientX;
+//             pos4 = touch.clientY;
+//             elmnt.style.top = (elmnt.offsetTop - newY) + "px";
+//             elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+//         }
+
+//         function mousemove(e) {
+//             e.preventDefault();
+//             var newX = pos3 - e.clientX;
+//             var newY = pos4 - e.clientY;
+//             pos3 = e.clientX;
+//             pos4 = e.clientY;
+//             elmnt.style.top = (elmnt.offsetTop - newY) + "px";
+//             elmnt.style.left = (elmnt.offsetLeft - newX) + "px";
+//         }
+
+//         function touchend() {
+//             document.removeEventListener('touchmove', touchmove);
+//             document.removeEventListener('touchend', touchend);
+//         }
+
+//         function mouseup() {
+//             document.removeEventListener('mousemove', mousemove);
+//             document.removeEventListener('mouseup', mouseup);
+//         }
+
+//         function updateZIndex() {
+//             document.querySelectorAll('img').forEach(function(img) {
+//                 img.style.zIndex = 1; // Reset z-index for all images
+//             });
+//         }
+//             }
+//             // Call the dragElement function with the draggable elements
+//             var images = document.querySelectorAll('img');
+//             images.forEach(function(img) {
+//                 dragElement(img);
+//             });
 
             console.log("JS RUNNING");
         
