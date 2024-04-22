@@ -3,52 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>insert</title>
+    <title>HOME</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Micro+5&family=Pangolin&family=Reenie+Beanie&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Silkscreen:wght@400;700&family=Single+Day&display=swap" rel="stylesheet">
     <style>
         @media only screen and (orientation: landscape) {
             body {
-                background-color: rgb(0, 0, 0);
-                background-image: url("band/vhsfront.PNG");
-                background-repeat: no-repeat;
-                background-size: 80%;
-                background-attachment: fixed;
-                background-position: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                overflow: hidden;
+              background-color: rgb(64, 0, 143);
+              z-index: -999;
+              margin: 0;
+              height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
-            .whitebox {
-                margin-top: 10vh;
-                background-color: white;
-                width: 30vw;
-                height: 38vh;
-                text-align: center;
-                opacity: 70%;
-                border-radius: 5%;
+            .container {
+              justify-content: center; 
+              align-items: center;
+              height: 100vh;
+              text-align: center;
+              overflow: hidden;
+              z-index: 900;
             }
-            .text {
-                font-family: "Reenie Beanie", cursive;
-                font-style: normal;
-                color: rgb(0, 0, 0);
-                font-size: 18pt;
-                text-align: center;
-                margin-top: 13vh;
-                line-height: 1;
-                word-spacing: -3px;
-            }
-            .subtext {
-                font-family: "Reenie Beanie", cursive;
-                font-style: normal;
-                color: rgb(0, 0, 0);
-                font-size: 14pt;
-                text-align: center;
-                line-height: 0;
-                word-spacing: -3px;
+            .vhs {
+              margin-top: 45vh;
+              z-index: 999;
+              height: 100%;
+              width: auto;
+              position: relative; /* Ensure the image stays relative to its container */
+              transition: transform 0.3s ease;
             }
             .flip {
                 display: none;
@@ -59,13 +43,10 @@
             .icon {
                 display: none;
             }
-            .container {
-                display: none;
-            }
         }
         @media only screen and (orientation: portrait) {
             body {
-                background-color: black;
+                background-color:  rgb(64, 0, 143);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -86,21 +67,59 @@
                 display: block;
                 text-align: center;
             }
-            .whitebox {
-                display: none;
+            .vhs {
+              display: none;
             }
         }
-    </style>
-    <body>
-        <div class="whitebox">
-            <h2 class="text"><s>one night stand</s></h2>
-            <h3 class="subtext"> kai wu: from the archive</h3>
-        </div>
+      </style>
+      </head>
+      <body>
         <div class="container">
-            <h2 class="flip">rotate phone to proceed</h2>
-            <div class="iconcontainer">
-                <img class="icon" src="band/rotateicon.png">
-            </div>
+            <img class="vhs" src="band/vhsf.png">
+          <h2 class="flip">rotate phone to proceed</h2>
+          <div class="iconcontainer">
+              <img class="icon" src="band/rotateicon.png">
+          </div>
         </div>
-    </body>
-  
+      </body>
+
+      <script>
+        // Get the image element
+        var vhsImage = document.querySelector('.vhs');
+      
+        // Initialize variables to track touch positions
+        var startY = 0;
+        var startTranslateY = 0;
+      
+        // Add event listeners for touch events
+        vhsImage.addEventListener('touchstart', touchStart, false);
+        vhsImage.addEventListener('touchmove', touchMove, false);
+      
+        // Function to handle touch start event
+        function touchStart(event) {
+          // Get the initial touch position
+          startY = event.touches[0].clientY;
+          // Get the initial translation value
+          startTranslateY = parseInt(getComputedStyle(vhsImage).transform.split(',')[5]) || 0;
+        }
+      
+        // Function to handle touch move event
+        function touchMove(event) {
+          // Prevent default behavior to prevent scrolling
+          event.preventDefault();
+          
+          // Calculate the distance moved
+          var deltaY = event.touches[0].clientY - startY;
+          
+          // Calculate the new translation value
+          var newTranslateY = startTranslateY + deltaY;
+      
+          // Update the image position
+          vhsImage.style.transform = 'translateY(' + newTranslateY + 'px)';
+          if (newTranslateY <= -511) {
+            // Load a new page
+            window.location.href = 'video.html';
+          }
+        }
+      </script>
+      </html>
