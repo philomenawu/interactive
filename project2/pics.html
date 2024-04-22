@@ -359,11 +359,10 @@ images.forEach(function(img) {
             } else {
             }
             } else {
-            if (yDiff > 0) {
-                /* up swipe */
+            if (yDiff > 100) {
                 window.location.href = "casette.html";
-            } else {
-            window.location.href = "cd.html";
+            } else if (yDiff < -100) {
+                window.location.href = "cd.html";
             }
             xDown = null;
             yDown = null;

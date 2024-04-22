@@ -133,10 +133,10 @@
                 } else {
                 }
               } else {
-                if (yDiff > 0) {
+                if (yDiff > 100) {
                   /* up swipe */
                   window.location.href = "cd.html";
-                } else {
+                } else if (yDiff < -100){
                 window.location.href = "index.html";
               }
               xDown = null;

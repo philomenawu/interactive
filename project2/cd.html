@@ -490,10 +490,10 @@
                 } else {
                 }
               } else {
-                if (yDiff > 0) {
+                if (yDiff > 100) {
                   /* up swipe */
                   window.location.href = "pics.html";
-                } else {
+                } else if (yDiff < -100) {
                 window.location.href = "video.html";
               }
               xDown = null;
