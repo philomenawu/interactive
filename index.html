@@ -7,6 +7,35 @@
     <link rel="icon" type="image/png" href="images/traffic.png">
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
     <style>
+      @media only screen and (max-width: 800px) {
+        body {
+          height: 100vh;
+          width: 100vw;
+        }
+        .mainimg.mobile {
+          width: 40%;
+          height: auto;
+          margin-top: 20%;
+          margin-bottom: 2%;
+        }
+        marquee img.animation {
+          width: 180%;
+          height: auto;
+          margin-top: 10%;
+        }
+        .border.mobile {
+          z-index: 9999;
+          border: 5px dashed black;
+          width: 50vw;
+          height: auto;
+          padding: 20px;
+          text-align: center;
+          justify-content: center; /* Horizontal centering */
+          align-items: center; /* Vertical centering */
+          margin: 0 auto; 
+        }
+      }
+
       a {
         text-decoration: underline;
         color: black;
@@ -49,7 +78,7 @@
       body {
         font-family: 'Archivo Black';
         text-align: center;
-        margin-top: 6%;
+        margin-top: 3%;
         animation-name: color;
         animation-duration: 10s;
         animation-timing-function: linear;
@@ -61,16 +90,17 @@
         font-weight: light;
       }
     
-      #mainimg {
+      .mainimg {
+        margin-top: 0%;
         width: 15%;
-        height: 15%;
+        height: auto;
         margin-bottom: 0px;
       }
 
-      #animation {
+      .animation {
         width: 50%;
         height: 50%;
-        margin-top: 5%;
+        margin-top: 3%;
       }
     
       h1 {
@@ -98,7 +128,7 @@
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 5%;
@@ -116,11 +146,28 @@
 .dropdown:hover .dropdown-content {display: inline-block;}
 
 .dropdown:hover .dropbtn {background-color: #000000;}
+
+.border {
+  z-index: 9999;
+  border: 5px dashed black;
+  width: 20vw;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  margin: 0 auto; 
+}
+
+footer {
+  margin-top: 0;
+}
      </style>
   </head>
   <body>
-    <img id="mainimg" src="images/pui-pui-molcar-potato.png">
+      <img class="mainimg mobile" src="images/pui-pui-molcar-potato.png">
     <h1>phil(omena)'s corner</h1>
+    <div class="border mobile">
     <button id="btn1"><a href="project1/index.html" target="_blank">&nbsp;&nbsp;&nbsp;webzine&nbsp;&nbsp;&nbsp;</a></button>
     <br><br>
     <button id="btn2"><a href="">website for one</a></button>
@@ -129,20 +176,16 @@
     <br><br>
     <div class="dropdown">
       <button class="dropbtn">exercises</button>
-      <div class="dropdown-content">
+      <div class="dropdown-content mobile">
         <a href="exercises/ambient.html" target="_blank">ambient website</a>
         <a href="exercises/websiteas.html" target="_blank">website as</a>
         <a href="exercises/keyboard_instrument/index.html" target="_blank">keyboard instrument</a>
       </div>
     </div>
+    </div>
+    <marquee behavior="scroll" direction="left"><img class="animation" src="images/puipui2.png"></marquee>
     <footer>
-      <br><br><br><p>created for <a href="https://2024.software-for-people.net/" target="_blank"><i>software for people</i></a></p>
+      <br><p>created for <a href="https://2024.software-for-people.net/" target="_blank"><i>software for people</i></a></p>
     </footer>
-    <marquee behavior="scroll" direction="left"><img id="animation" src="images/puipui2.png"></marquee>
   </body>
 </html>
-    
-    
-
-
-      
