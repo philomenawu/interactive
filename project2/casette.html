@@ -73,7 +73,7 @@
         </div>
         </div>
 
-        <!-- <script>
+        <script>
                         console.log("JS RUNNING");
       
       document.addEventListener("touchstart", handleTouchStart, false);
@@ -112,15 +112,15 @@
           } else {
           }
         } else {
-          if (yDiff > 0) {
+          if (yDiff > 10) {
             /* up swipe */
             window.location.href = "pics.html";
-          } else {
+          } else if (yDiff < -10) {
           window.location.href = "cd.html";
         }
         xDown = null;
         yDown = null;
       }
   }
-        </script> -->
+        </script>
     </body>
