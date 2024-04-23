@@ -77,16 +77,26 @@
 
 // Get the image element
         console.log("JS RUNNING");
+        // Get the image element
         var casetteImage = document.getElementById('casetteImage');
+        var clickCount = 0;
 
         // Add event listener for click
         casetteImage.addEventListener('click', function() {
-          // Change the image source
-          if (casetteImage.src.endsWith('casettebag.PNG')) {
-            casetteImage.src = 'band/casette5.png'; // Replace 'new_image.jpg' with the path to the new image
-          } else {
-            casetteImage.src = 'band/casettebag.PNG'; // Replace 'band/casettebag.PNG' with the original image path
-          }
+            // Increment click count
+            clickCount++;
+
+            // Change the image source based on click count
+            if (clickCount === 1) {
+                casetteImage.src = 'band/casette5.png'; // Replace 'new_image.jpg' with the path to the new image
+            } else if (clickCount === 2) {
+                // Navigate to a new webpage after the second click
+                window.location.href = 'tapes.html'; // Replace 'https://example.com' with the URL of the desired webpage
+            } else {
+                // Reset click count and image source
+                clickCount = 0;
+                casetteImage.src = 'band/casettebag.PNG'; // Replace 'band/casettebag.PNG' with the original image path
+            }
         });
       
       document.addEventListener("touchstart", handleTouchStart, false);
