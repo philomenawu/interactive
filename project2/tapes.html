@@ -32,7 +32,6 @@ body {
 .container {
   overflow: hidden;
   padding: 20px;
-  /* margin-top: 1em; */
 }
 
 .card-carousel {
@@ -128,9 +127,9 @@ body {
   transform: translateX(-50%);
   bottom: -15px;
   width: 85%;
-  height: 15px; /* Adjust the shadow height as needed */
-  background: rgba(0, 0, 0, 0.3); /* Shadow color */
-  z-index: -99; /* Ensure the shadow is behind the image */
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -99; 
 }
 
         </style>
@@ -241,7 +240,7 @@ class DraggingEvent {
     })
   }
   
-  // Get the distance that the user has dragged
+
   getDistance(callback) {
     function distanceInit(e1) {
       let startingX, startingY;
