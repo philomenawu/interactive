@@ -102,10 +102,12 @@ html {
 .image-container .front,
 .image-container .back {
   position: absolute;
-  width: 100%;
+  width: 85%;
   height: 100%;
   backface-visibility: hidden;
   transition: transform 0.5s;
+  transform-origin: center center;
+  background-size: cover;
 }
 
 .image-container .back {
@@ -126,7 +128,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   bottom: -15px;
-  width: 80%;
+  width: 85%;
   height: 15px; /* Adjust the shadow height as needed */
   background: rgba(0, 0, 0, 0.3); /* Shadow color */
   z-index: -99; /* Ensure the shadow is behind the image */
@@ -138,23 +140,49 @@ html {
     <div class="container">
       <div class="card-carousel">
         <div class="card" id="1">
-          <div class="image-container"onclick="flipImage(this)">
+          <div class="image-container" onclick="flipImage(this)">
             <div class="front" style="background-image: url('band/f1.png');"></div>
             <div class="back" style="background-image: url('band/b1.png');"></div>
          </div>
         </div>
         <div class="card" id="2">
-          <div class="image-container" style="background-image: url('band/f2.png');" onclick="flipImage(this)"></div>
+          <div class="image-container" onclick="flipImage(this)">
+            <div class="front" style="background-image: url('band/f2.png');"></div>
+            <div class="back" style="background-image: url('band/b2.png');"></div>
+            </div>
         </div>
         <div class="card" id="3">
-          <div class="image-container" style="background-image: url('band/f3.png');" onclick="flipImage(this)"></div>
+          <div class="image-container" onclick="flipImage(this)">
+            <div class="front" style="background-image: url('band/f3.png');"></div>
+            <div class="back" style="background-image: url('band/b3.png');"></div>
+        </div>
         </div>  
         <div class="card" id="4">
-          <div class="image-container" style="background-image: url('band/b1.png');" onclick="flipImage(this)"></div>
+          <div class="image-container" onclick="flipImage(this)">
+            <div class="front" style="background-image: url('band/f1.png');"></div>
+            <div class="back" style="background-image: url('band/b1.png');"></div>
+        </div>
         </div>
         <div class="card" id="5">
-          <div class="image-container" style="background-image: url('band/b2.png');" onclick="flipImage(this)"></div>
+          <div class="image-container" onclick="flipImage(this)">
+            <div class="front" style="background-image: url('band/f2.png');"></div>
+            <div class="back" style="background-image: url('band/b2.png');"></div>
         </div>
+        </div>
+        <div class="card" id="6">
+            <div class="image-container" onclick="flipImage(this)">
+              <div class="front" style="background-image: url('band/f3.png');"></div>
+              <div class="back" style="background-image: url('band/b3.png');"></div>
+          </div>
+          </div>
+          <div class="card" id="7">
+            <div class="image-container" onclick="flipImage(this)">
+              <div class="front" style="background-image: url('band/f2.png');"></div>
+              <div class="back" style="background-image: url('band/b2.png');"></div>
+          </div>
+          </div>
+
+
       </div>
       <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
     </div>
