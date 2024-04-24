@@ -530,6 +530,14 @@
             xDown = null;
             yDown = null;
         }
+        function enableSwipeNavigation() {
+            document.addEventListener("touchstart", handleTouchStart, false);
+            document.addEventListener("touchmove", handleTouchMove, false);
+        }
+        window.addEventListener('load', function() {
+        // Set a delay before enabling swipe navigation
+            setTimeout(enableSwipeNavigation, 1000); // Adjust the delay time as needed (in milliseconds)
+        });
 
 
         // Designed by: Mauricio Bucardo
