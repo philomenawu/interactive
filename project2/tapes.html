@@ -11,215 +11,258 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Micro+5&family=Pangolin&family=Reenie+Beanie&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Silkscreen:wght@400;700&family=Single+Day&family=VT323&display=swap" rel="stylesheet">
     <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+        @media only screen and (min-width: 1000px) {
+            .landscape {
+              display: none;
+            }
+            body {
+              background-color: rgb(0, 0, 0);
+            }
+            .flip {
+              display: none;
+            }
+            .icon {
+              display: none;
+            }
+            .iconcontainer {
+              display: none;
+            }
+            .casette {
+              display: none;
+            }
+        }
 
-body {
-  background: rgb(0, 0, 0);
-}
-
-.visuallyhidden {
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  opacity: 0;
-  
-}
-
-.container {
-  overflow: hidden;
-  padding: 20px;
-}
-
-.card-carousel {
-  --card-width: 80%;
-  --card-max-width: 280px;
-  --card-height: 350px;
-  --carousel-min-width: 600px;
-  z-index: 1;
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  height: var(--card-height);
-  min-width: var(--carousel-min-width);
-  transition: filter .3s ease;
-}
-
-@media screen and (max-width: 640px) {
-  .card-carousel {
-    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
-  }
-}
-
-.card-carousel.smooth-return {
-  transition: all .2s ease;
-}
-
-.card-carousel .card {
-  width: var(--card-width);
-  max-width: var(--card-max-width);
-  text-align: center;
-  padding: 1em;
-  min-width: 250px;
-  height: var(--card-height);
-  position: absolute;
-  margin: 0 auto;
-  transition: inherit;
-  filter: brightness(.9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card.highlight {
-  filter: brightness(1)
-}
-
-.image-container {
-  width: var(--card-width);
-  max-width: var(--card-max-width);
-  text-align: center;
-  padding: 1em;
-  min-width: 250px;
-  height: var(--card-height);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  filter: brightness(.9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-container .front,
-.image-container .back {
-  position: absolute;
-  width: 85%;
-  height: 100%;
-  backface-visibility: hidden;
-  transition: transform 0.5s;
-  transform-origin: center center;
-  background-size: cover;
-}
-
-.image-container .back {
-  transform: rotateY(180deg);
-}
-
-.flipped .front {
-  transform: rotateY(180deg);
-}
-
-.flipped .back {
-  transform: rotateY(0deg);
-}
-
-.image-container::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -15px;
-  width: 85%;
-  height: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -99; 
-}
+        @media only screen and (orientation: landscape) {
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+            body {
+              background: rgb(0, 0, 0);
+            }
+            .visuallyhidden {
+              position: absolute;
+              z-index: -1;
+              right: 0;
+              opacity: 0;
+            }
+            .container {
+              overflow: hidden;
+              padding: 20px;
+            }
+            .card-carousel {
+              --card-width: 80%;
+              --card-max-width: 280px;
+              --card-height: 350px;
+              --carousel-min-width: 600px;
+              z-index: 1;
+              position: relative;
+              margin: 0 auto;
+              width: 100%;
+              height: var(--card-height);
+              min-width: var(--carousel-min-width);
+              transition: filter .3s ease;
+            }
+            @media screen and (max-width: 640px) {
+                .card-carousel {
+                  margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+                }
+              }
+              .card-carousel.smooth-return {
+                transition: all .2s ease;
+              }
+              .card-carousel .card {
+                width: var(--card-width);
+                max-width: var(--card-max-width);
+                text-align: center;
+                padding: 1em;
+                min-width: 250px;
+                height: var(--card-height);
+                position: absolute;
+                margin: 0 auto;
+                transition: inherit;
+                filter: brightness(.9);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+              .card.highlight {
+                filter: brightness(1)
+              }
+              .image-container {
+                width: var(--card-width);
+                max-width: var(--card-max-width);
+                text-align: center;
+                padding: 1em;
+                min-width: 250px;
+                height: var(--card-height);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                filter: brightness(.9);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+              }
+              .image-container .front,
+              .image-container .back {
+                position: absolute;
+                width: 85%;
+                height: 100%;
+                backface-visibility: hidden;
+                transition: transform 0.5s;
+                transform-origin: center center;
+                background-size: cover;
+              }
+              .image-container .back {
+                transform: rotateY(180deg);
+              }
+              .flipped .front {
+                transform: rotateY(180deg);
+              }
+              .flipped .back {
+                transform: rotateY(0deg);
+              }
+              .image-container::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -15px;
+                width: 85%;
+                height: 15px;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: -99; 
+              }
+          }
+          @media only screen and (orientation: portrait) {
+              .landscape {
+                display: none;
+              }
+              body {
+                  background-color: rgb(0, 0, 0);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  /* overflow: hidden; */
+              }
+              .flip {
+                  text-align: center;
+                  color: white;
+                  font-size: 18pt;
+                  font-family: "Reenie Beanie", cursive;
+              }
+              .icon {
+                  width: 40%;
+                  height: 40%;
+              }
+              .iconcontainer {
+                  display: block;
+                  text-align: center;
+              }
+              .casette {
+                  display: none;
+              }
+            }
 
         </style>
         </head>
+
 <body>
     <div class="container">
-      <div class="card-carousel">
-        <div class="card" id="1">
-          <div class="image-container" onclick="flipImage(this)">
-            <div class="front" style="background-image: url('band/f1.png');"></div>
-            <div class="back" style="background-image: url('band/b1.png');"></div>
-         </div>
-        </div>
-        <div class="card" id="2">
-          <div class="image-container" onclick="flipImage(this)">
-            <div class="front" style="background-image: url('band/f2.png');"></div>
-            <div class="back" style="background-image: url('band/b2.png');"></div>
+      <div class="landscape">
+        <div class="card-carousel">
+          <div class="card" id="1">
+              <div class="image-container" onclick="flipImage(this)">
+                <div class="front" style="background-image: url('band/f1.png');"></div>
+                <div class="back" style="background-image: url('band/b1.png');"></div>
+              </div>
+          </div>
+          <div class="card" id="2">
+            <div class="image-container" onclick="flipImage(this)">
+              <div class="front" style="background-image: url('band/f2.png');"></div>
+              <div class="back" style="background-image: url('band/b2.png');"></div>
             </div>
-        </div>
-        <div class="card" id="3">
-          <div class="image-container" onclick="flipImage(this)">
-            <div class="front" style="background-image: url('band/f3.png');"></div>
-            <div class="back" style="background-image: url('band/b3.png');"></div>
-        </div>
-        </div>  
+          </div>
+          <div class="card" id="3">
+            <div class="image-container" onclick="flipImage(this)">
+              <div class="front" style="background-image: url('band/f3.png');"></div>
+              <div class="back" style="background-image: url('band/b3.png');"></div>
+            </div>
+          </div>  
         <div class="card" id="4">
           <div class="image-container" onclick="flipImage(this)">
             <div class="front" style="background-image: url('band/f4.png');"></div>
             <div class="back" style="background-image: url('band/b4.png');"></div>
-        </div>
+          </div>
         </div>
         <div class="card" id="5">
           <div class="image-container" onclick="flipImage(this)">
             <div class="front" style="background-image: url('band/f5.png');"></div>
             <div class="back" style="background-image: url('band/b5.png');"></div>
-        </div>
+          </div>
         </div>
         <div class="card" id="6">
             <div class="image-container" onclick="flipImage(this)">
               <div class="front" style="background-image: url('band/f6.png');"></div>
               <div class="back" style="background-image: url('band/b6.png');"></div>
-          </div>
+            </div>
           </div>
           <div class="card" id="7">
             <div class="image-container" onclick="flipImage(this)">
               <div class="front" style="background-image: url('band/f7.png');"></div>
               <div class="back" style="background-image: url('band/b7.png');"></div>
+            </div>
           </div>
-          </div>
-
-
       </div>
       <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+      </div>
+      <h2 class="flip">rotate phone to proceed</h2>
+      <div class="iconcontainer">
+          <img class="icon" src="band/rotateicon.png">
+      </div>
     </div>
 
 
   <script>
-function flipImage(element) {
-  element.parentElement.classList.toggle('flipped');
-}
-const cardsContainer = document.querySelector(".card-carousel");
-const cardsController = document.querySelector(".card-carousel + .card-controller")
+    function flipImage(element) {
+      element.parentElement.classList.toggle('flipped');
+    }
+    const cardsContainer = document.querySelector(".card-carousel");
+    const cardsController = document.querySelector(".card-carousel + .card-controller")
 
-class DraggingEvent {
-  constructor(target = undefined) {
-    this.target = target;
-  }
-  
-  event(callback) {
-    let handler;
-    
-    this.target.addEventListener("mousedown", e => {
-      e.preventDefault()
-      
-      handler = callback(e)
-      
-      window.addEventListener("mousemove", handler)
-      
-      document.addEventListener("mouseleave", clearDraggingEvent)
-      
-      window.addEventListener("mouseup", clearDraggingEvent)
-      
-      function clearDraggingEvent() {
-        window.removeEventListener("mousemove", handler)
-        window.removeEventListener("mouseup", clearDraggingEvent)
-      
-        document.removeEventListener("mouseleave", clearDraggingEvent)
-        
-        handler(null)
+    class DraggingEvent {
+      constructor(target = undefined) {
+        this.target = target;
       }
+  
+    event(callback) {
+      let handler;
+      
+      this.target.addEventListener("mousedown", e => {
+        e.preventDefault()
+        
+        handler = callback(e)
+        
+        window.addEventListener("mousemove", handler)
+        
+        document.addEventListener("mouseleave", clearDraggingEvent)
+        
+        window.addEventListener("mouseup", clearDraggingEvent)
+        
+        function clearDraggingEvent() {
+          window.removeEventListener("mousemove", handler)
+          window.removeEventListener("mouseup", clearDraggingEvent)
+        
+          document.removeEventListener("mouseleave", clearDraggingEvent)
+          
+          handler(null)
+        }
     })
     
     this.target.addEventListener("touchstart", e => {
@@ -512,6 +555,7 @@ class CardCarousel extends DraggingEvent {
 
 const carousel = new CardCarousel(cardsContainer)
 
+//swipe to next/previous page
 console.log("JS RUNNING");
 
 document.addEventListener("touchstart", handleTouchStart, false);

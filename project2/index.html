@@ -8,6 +8,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Micro+5&family=Pangolin&family=Reenie+Beanie&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Silkscreen:wght@400;700&family=Single+Day&display=swap" rel="stylesheet">
     <style>
+      @media only screen and (min-width: 1000px) {
+          body {
+            background-color: rgb(0, 0, 0);
+          }
+          .container {
+            display: none;
+          }
+          .vhs {
+            display: none;
+          }
+          .flip {
+            display: none;
+          }
+          .iconcontainer {
+            display: none;
+          }
+          .icon {
+            display: none;
+          }
+      }
+
         @media only screen and (orientation: landscape) {
             body {
               background-color: rgb(0, 0, 0);
@@ -31,7 +52,7 @@
               z-index: 999;
               height: 110%;
               width: auto;
-              position: relative; /* Ensure the image stays relative to its container */
+              position: relative;
               transition: transform 0.3s ease;
             }
             .flip {
@@ -44,6 +65,7 @@
                 display: none;
             }
         }
+
         @media only screen and (orientation: portrait) {
             body {
                 background-color:  rgb(0, 0, 0);
@@ -51,7 +73,6 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
-                /* overflow: hidden; */
             }
             .flip {
                 text-align: center;
@@ -71,53 +92,39 @@
               display: none;
             }
         }
+
       </style>
       </head>
-      <body>
-        <div class="container">
-            <img class="vhs" src="band/vhsf.png">
-          <h2 class="flip">rotate phone to proceed</h2>
-          <div class="iconcontainer">
-              <img class="icon" src="band/rotateicon.png">
+
+        <body>
+          <div class="container">
+              <img class="vhs" src="band/vhsf.png">
+              <h2 class="flip">rotate phone to proceed</h2>
+              <div class="iconcontainer">
+                  <img class="icon" src="band/rotateicon.png">
+              </div>
           </div>
-        </div>
-      </body>
+        </body>
 
       <script>
-        // Get the image element
         var vhsImage = document.querySelector('.vhs');
-      
-        // Initialize variables to track touch positions
         var startY = 0;
         var startTranslateY = 0;
-      
-        // Add event listeners for touch events
+    
         vhsImage.addEventListener('touchstart', touchStart, false);
         vhsImage.addEventListener('touchmove', touchMove, false);
       
-        // Function to handle touch start event
         function touchStart(event) {
-          // Get the initial touch position
           startY = event.touches[0].clientY;
-          // Get the initial translation value
           startTranslateY = parseInt(getComputedStyle(vhsImage).transform.split(',')[5]) || 0;
         }
       
-        // Function to handle touch move event
         function touchMove(event) {
-          // Prevent default behavior to prevent scrolling
           event.preventDefault();
-          
-          // Calculate the distance moved
           var deltaY = event.touches[0].clientY - startY;
-          
-          // Calculate the new translation value
           var newTranslateY = startTranslateY + deltaY;
-      
-          // Update the image position
           vhsImage.style.transform = 'translateY(' + newTranslateY + 'px)';
           if (newTranslateY <= -490) {
-            // Load a new page
             window.location.href = 'video.html';
           }
         }
