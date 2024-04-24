@@ -107,7 +107,7 @@
     <body>
         <div>
             <!-- <h1 class="vhstext">PLAY ➤</h1> -->
-            <iframe class="video" width="630" height="300" src="https://www.youtube.com/embed/q74kWaba_Ak?si=AmVF-C41U0jAN_qL" 
+            <iframe id="youtube" class="video" width="630" height="300" src="https://www.youtube.com/embed/q74kWaba_Ak?si=AmVF-C41U0jAN_qL" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
             gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
@@ -170,6 +170,7 @@
             xDown = null;
             yDown = null;
         }
+
         function enableSwipeNavigation() {
             document.addEventListener("touchstart", handleTouchStart, false);
             document.addEventListener("touchmove", handleTouchMove, false);
