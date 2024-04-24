@@ -278,8 +278,8 @@
     //swipe to next/previous page
     console.log("JS RUNNING");
 
-    document.addEventListener("touchstart", handleTouchStart, false);
-    document.addEventListener("touchmove", handleTouchMove, false);
+    // document.addEventListener("touchstart", handleTouchStart, false);
+    // document.addEventListener("touchmove", handleTouchMove, false);
 
     var xDown = null;
     var yDown = null;
@@ -328,6 +328,14 @@
         xDown = null;
         yDown = null;
 }
+    function enableSwipeNavigation() {
+          document.addEventListener("touchstart", handleTouchStart, false);
+          document.addEventListener("touchmove", handleTouchMove, false);
+      }
+      window.addEventListener('load', function() {
+      // Set a delay before enabling swipe navigation
+          setTimeout(enableSwipeNavigation, 1000); // Adjust the delay time as needed (in milliseconds)
+      });
     </script>
     </body>
     </html>
