@@ -8,11 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Micro+5&family=Pangolin&family=Reenie+Beanie&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Schoolbell&family=Silkscreen:wght@400;700&family=Single+Day&display=swap" rel="stylesheet">
     <style>
-      @media only screen and (min-width: 1000px) {
-          /* .qrcontainer {
+      @media only screen and (min-width: 900px) {
+        /* have casette tapes take up full phone screen, have analogue objects be in front (user interacts with it to reveal audio/video element) */
+        .qrcontainer {
             justify-content: center; 
             align-items: center;
-            height: 100vh;
             text-align: center;
             overflow: hidden;
           }
@@ -25,7 +25,7 @@
           .qr {
             width: 10%;
             height: auto;
-          } */
+          }
           body {
             background-color: rgb(0, 0, 0);
           }
@@ -46,10 +46,10 @@
           }
       }
 
-        @media only screen and (orientation: landscape) {
-            /* .qrcontainer {
+        @media only screen and (orientation: landscape) and (max-width: 900px) {
+            .qrcontainer {
               display: none;
-            } */
+            }
             body {
               background-color: rgb(0, 0, 0);
               z-index: -999;
@@ -87,6 +87,9 @@
         }
 
         @media only screen and (orientation: portrait) {
+          .qrcontainer {
+              display: none;
+            }
             body {
                 background-color:  rgb(0, 0, 0);
                 display: flex;
@@ -117,10 +120,10 @@
       </head>
 
         <body>
-          <!-- <div class="qrcontainer">
-            <h3 class="qrtext">scan with mobile device to access website</h3>
+          <div class="qrcontainer">
+            <h3 class="qrtext">scan with a mobile device to access website</h3>
             <img class="qr" src="band/qr.png">
-          </div> -->
+          </div>
           <div class="container">
               <img class="vhs" src="band/vhsf.png">
               <h2 class="flip">rotate phone to proceed</h2>
