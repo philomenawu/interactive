@@ -1,20 +1,98 @@
 <!DOCTYPE html>
-<html> 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Input-Output</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <input type="range" id="slider" name="size" min="1" max="1000">
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="cloud.png"/>
+  <title>nephology</title>
+  <style>
+    html {
+      background-image: url(sky4.jpg);
+      min-height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
 
-    <div class="circle-wrapper">
-      <div id="circle"></div>
-    </div>
+    .ascii-wrapper {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top:0px;
+      left:0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -100;
+      overflow: hidden;
+    }
 
-     <a href="../index.html">Back</a>
-    <!-- And here's a link to our javascript, written in an external js file called main.js -->
-    <script src="main.js"></script>
-  </body>
+    pre {
+      font-family: monospace;
+      white-space: pre-wrap;
+      color: white; /* Set color to white for better visibility on black background */
+      position: absolute; /* Set position to absolute */
+    }
+
+    input {
+      width: 100%;
+    }
+
+    a {
+      position: fixed;
+      left: 1em;
+      bottom: 1em;
+    }
+    .textcontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      overflow: none;
+    }
+
+    .text {
+      text-align: center;
+      color: white;
+      z-index: 9999;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <input type="range" id="slider" name="size" min="1" max="20" value="1"> <!-- Limited to 10 ASCII art for demonstration -->
+  <div class="textcontainer"><div class="text">see how they dance.</div></div>
+  <div class="ascii-wrapper" id="ascii-wrapper">
+  </div>
+  <script>
+    document.getElementById("slider").oninput = function() {
+      var numAscii = parseInt(this.value);
+      var asciiArt = "";
+
+      // Define your ASCII art strings
+      asciiArt = "                                               ██████                \n";
+      asciiArt += "                                            ██      ██              \n";
+      asciiArt += "                                        ██          ████          \n";
+      asciiArt += "                                        ██              ▒▒██        \n";
+      asciiArt += "                                    ████▒▒                ██        \n";
+      asciiArt += "                            ██████      ▒▒            ▒▒▒▒████    \n";
+      asciiArt += "                            ██▒▒            ▒▒        ▒▒      ▒▒██  \n";
+      asciiArt += "                            ██▒▒▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒          ▒▒██\n";
+      asciiArt += "                            ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████\n";
+      asciiArt += "                                ████████▓▓████████████████████████  \n";
+
+      var wrapper = document.getElementById("ascii-wrapper");
+      wrapper.innerHTML = ''; // Clear previous ASCII art
+
+      // Set the ASCII art content and position randomly
+      for (var i = 0; i < numAscii; i++) {
+        var pre = document.createElement('pre');
+        pre.textContent = asciiArt;
+        pre.style.top = Math.random() * (wrapper.clientHeight - 50) + 'px'; // Randomize top position within wrapper height
+        pre.style.left = Math.random() * (wrapper.clientWidth - 50) + 'px'; // Randomize left position within wrapper width
+        wrapper.appendChild(pre);
+      }
+    }
+  </script>
+</body>
 </html>
