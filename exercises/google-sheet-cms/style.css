@@ -61,7 +61,7 @@ li {
 
 #sheetData li::before {
   /* content: '─── ❖ ── ✦ ── ❖ ───'; */
-  content: ' ────── ♫⋆｡♪ lıllılı.ıllı.ılılıı ♬｡♪₊˚ ────── ';
+  content: '  ○•··········♫⋆｡♪ lıllılı.ıllı.ılılıı ♬｡♪₊˚··········•○  ';
 }
 
 
@@ -85,9 +85,65 @@ body, .public-sans {
   background-image: url(background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
   font-family: "Public Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
-  overflow: none;
+  overflow: hidden;
+}
+
+.thankyou_message {
+  text-align: center;
+  font-weight: 60;
+}
+.thankyou_messagecd {
+  width: 15vw;
+  height: auto;
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-weight: 2;
+}
+.cdcontainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom:  10vh;
+  margin-top: 10vh;
+}
+
+@media only screen and (max-width: 900px) {
+  #sheetData {
+    list-style: none;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);;
+    border-radius: 20px;
+    opacity: 70;
+    /* border: 1px solid black; */
+    width: 50vw;
+    text-align: center;
+    padding: 3em;
+    overflow-y: auto;
+  }
+  #sheetData li::before {
+    /* content: '─── ❖ ── ✦ ── ❖ ───'; */
+    content: ' ○•··· ⋆｡♪ lıllııllı.lıı ♬｡♪ ···•○ ';
+  }
+  #sheetData li {
+    word-wrap: break-word;
+  }
+  .thankyou_messagecd {
+    width: 30vw;
+    height: auto;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: 2;
+  }
+  .cdcontainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom:  10vh;
+    margin-top: 10vh;
+  }
 }

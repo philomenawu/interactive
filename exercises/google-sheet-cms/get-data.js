@@ -41,16 +41,21 @@ function handleData(response) {
         var anchor = document.createElement("a");
         anchor.href = item[key];
         anchor.textContent = item[key]; // You may want to use a different text if necessary
+        anchor.style.textDecoration = "underline"; // Set display to inline-block
+        // anchor.style.textAlign = "center"; // Center the text
         divKeyValue.appendChild(anchor);
       } else {
         // If it's not a hyperlink, set innerHTML as the value
-        if (key === 'name' || 'word') { // Check if it's the song name
-          divKeyValue.innerHTML = '<span style="font-weight: 300;">' + item[key] + '</span>'; // Apply bold and color styling
-        } else {
+        if (key === 'name') { // Check if it's the song name
+          divKeyValue.innerHTML = '<span style="font-weight: 500;">' + item[key] + '</span>'; // Apply bold and color styling
+        } else if (key === 'word') {
+          divKeyValue.innerHTML = '<span style="font-weight: 200; font-style: italic;">' + item[key] + '</span>';
+        }
+        else {
           divKeyValue.innerHTML = item[key];
         }
       }
-
+      divKeyValue.style.marginBottom = "3px";
       // Append the <div> element for the key-value pair to the <li> item
       listItem.appendChild(divKeyValue);
     });
