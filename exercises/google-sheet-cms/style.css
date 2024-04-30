@@ -146,14 +146,4 @@ body, .public-sans {
     margin-bottom:  10vh;
     margin-top: 10vh;
   }
-  html, body, .public-sans {
-    background-image: url(background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    font-family: "Public Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-  }
 }
