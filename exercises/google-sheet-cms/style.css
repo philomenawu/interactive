@@ -1,0 +1,92 @@
+/* * {
+  font-family: Helvetica, sans-serif;
+} */
+
+fieldset {
+  /* border: 2px dashed black;
+  background-color: white; */
+  align-items: center;
+  margin: 0 auto;
+  padding: 3rem;
+  margin-bottom: 1rem;
+  width: 20vw;
+  text-align: center;
+  border-radius: 20px;
+}
+label {
+  display: block;
+}
+
+.honeypot-field {
+  display: none;
+}
+
+.form-elements {
+  display: block;
+  text-align: center;
+  height: 10vh;
+  overflow: none;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+.Timestamp {
+  display: none;
+}
+
+.header {
+  text-align: center;
+}
+
+/* body {
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+#sheetData {
+  list-style: none;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);;
+  border-radius: 20px;
+  opacity: 70;
+  /* border: 1px solid black; */
+  width: 30vw;
+  text-align: center;
+  padding: 3em;
+  overflow-y: auto;
+}
+
+#sheetData li::before {
+  content: '─── ❖ ── ✦ ── ❖ ───';
+}
+
+
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  /* align-items: center; Center vertically */
+  height: 60.5vh;
+}
+
+button {
+  text-decoration: none;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+body, .public-sans {
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  overflow: none;
+}
