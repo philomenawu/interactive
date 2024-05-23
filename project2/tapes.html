@@ -145,6 +145,22 @@
               .iconcontainer {
                 display: none;
               }
+              .nextbutton {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%); 
+                right: 10px; 
+                border: none;
+                background-color: black;
+                width: 7.2vw;
+                z-index: 1000;
+                pointer-events: auto;
+            }
+              .nexticon {
+                width: 8vw;
+                height: auto;
+                right: 15px;
+              }
           }
           @media only screen and (orientation: portrait) {
               .landscape {
@@ -234,7 +250,7 @@
           <img class="icon" src="band/rotateicon.png">
       </div>
     </div>
-
+    <button class="nextbutton"><a href="pics2.html"><img class="nexticon" src="band/skip.jpg"></a></button>
 
   <script>
     function flipImage(element) {

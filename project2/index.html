@@ -85,6 +85,21 @@
             .icon {
                 display: none;
             }
+            .gif-container {
+              height: auto; /* Set height to auto to maintain aspect ratio */
+              max-height: 30vh; /* Set maximum height */
+              width: auto; /* Set width to auto to maintain aspect ratio */
+              max-width: 80vw; /* Set maximum width */
+              position: absolute;
+              top: 10px; /* Adjust the top position as needed */
+              right: 35vw; /* Adjust the right position as needed */
+              z-index: -1000; /* Ensure the GIF is above other elements */
+              opacity: 30%;
+            }
+            .gif {
+              height: 30vh;
+              width: 30vw;
+            }
         }
 
         @media only screen and (orientation: portrait) {
@@ -124,6 +139,9 @@
           <div class="qrcontainer">
             <h3 class="qrtext">scan with phone to proceed</h3>
             <img class="qr" src="band/qr.png">
+          </div>
+          <div class="gif-container">
+            <img class="gif" src="band/up.gif">
           </div>
           <div class="container">
               <img class="vhs" src="band/vhsf.png">
