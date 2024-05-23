@@ -226,15 +226,19 @@
         <img id="img16" src="band/pic16.JPG" draggable="true">
         <img id="img6" src="band/pic6.JPG" draggable="true">
         <img id="img2" src="band/pic2.JPG" draggable="true">
+
+        <button class="nextbutton"><a href="cd.html"><img class="nexticon" src="band/skip.jpg"></a></button>
         <div class="container">
             <h2 class="flip">rotate phone to proceed</h2>
             <div class="iconcontainer">
                 <img class="icon" src="band/rotateicon.png">
             </div>
         </div>
-        <button class="nextbutton"><a href="cd.html"><img class="nexticon" src="band/skip.jpg"></a></button>
-
+        
     <script>
+        function navigateToNextPage() {
+            window.location.href = "cd.html";
+        }
         function dragElement(elmnt) {
             var pos3 = 0, pos4 = 0;
 
