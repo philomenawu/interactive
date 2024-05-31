@@ -167,16 +167,18 @@
                 transform: translateY(-50%); 
                 right: 10px; 
                 border: none;
-                background-color: black;
+                background-color: rgba(0, 0, 0, 0);
                 width: 7.2vw;
                 height: 20vh;
-                z-index: 1000;
+                z-index: 99999;
                 pointer-events: auto;
             }
             .nexticon {
                 width: 8vw;
                 height: auto;
                 right: 15px;
+                pointer-events: none;
+                z-index: 99;
             }
         }
 
@@ -242,9 +244,12 @@
                 <img class="icon" src="band/rotateicon.png">
             </div>
         </div>
-        <button class="nextbutton"><a href="video2.html"><img class="nexticon" src="band/skip.jpg"></a></button>
+        <button class="nextbutton" onclick="navigateToNextPage()"><img class="nexticon" src="band/skip.jpg" onclick="navigateToNextPage()"></button>
 
     <script>
+        function navigateToNextPage() {
+            window.location.href = "video2.html";
+        }
         function dragElement(elmnt) {
             var pos3 = 0, pos4 = 0;
 

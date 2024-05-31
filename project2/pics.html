@@ -166,16 +166,18 @@
                 transform: translateY(-50%); 
                 right: 10px; 
                 border: none;
-                background-color: black;
+                background-color: rgba(0, 0, 0, 0);
                 width: 7.2vw;
                 height: 20vh;
-                z-index: 1000;
+                z-index: 99999;
                 pointer-events: auto;
             }
             .nexticon {
                 width: 8vw;
                 height: auto;
                 right: 15px;
+                pointer-events: none;
+                z-index: 99;
             }
         }
 
@@ -236,7 +238,7 @@
         <img id="img6" src="band/pic6.JPG" draggable="true">
         <img id="img2" src="band/pic2.JPG" draggable="true">
 
-        <button class="nextbutton"><a href="cd.html"><img class="nexticon" src="band/skip.jpg"></a></button>
+        <button class="nextbutton" onclick="navigateToNextPage()"><img class="nexticon" src="band/skip.jpg" onclick="navigateToNextPage()"></button>
         <div class="container">
             <h2 class="flip">rotate phone to proceed</h2>
             <div class="iconcontainer">
